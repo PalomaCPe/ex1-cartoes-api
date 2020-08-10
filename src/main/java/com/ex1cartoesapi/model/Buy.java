@@ -10,7 +10,7 @@ public class Compra {
     private int id;
 
     @ManyToOne
-    private  Cartao cartao;
+    private Card card;
 
     @DecimalMin(value = "0", message = "Valor da compra deve ser maior ou igual a zero")
     @Digits(integer = 6, fraction = 2, message = "Valor da compra fora do padrão")
@@ -32,12 +32,12 @@ public class Compra {
         this.id = id;
     }
 
-    public Cartao getCartao() {
-        return cartao;
+    public Card getCard() {
+        return card;
     }
 
-    public void setCartao(Cartao cartao) {
-        this.cartao = cartao;
+    public void setCard(Card card) {
+        this.card = card;
     }
 
     public double getValordacompra() {
