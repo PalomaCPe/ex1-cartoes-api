@@ -1,9 +1,13 @@
 package com.ex1cartoesapi.model;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
+@Table(name = "buy")
+@EntityListeners(AuditingEntityListener.class)
 public class Buy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,9 +1,13 @@
 package com.ex1cartoesapi.model;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "card")
+@EntityListeners(AuditingEntityListener.class)
 public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +17,7 @@ public class Card {
     private String dateValid;
     private String dateBestBuy;
     private Status status;
-    private double limit;
+    private double cardLimit;
 
     public Card() {
     }
@@ -73,12 +77,12 @@ public class Card {
         this.status = status;
     }
 
-    public double getLimit() {
-        return limit;
+    public double getCardLimit() {
+        return cardLimit;
     }
 
-    public void setLimit(double limit) {
-        this.limit = limit;
+    public void setCardLimit(double cardLimit) {
+        this.cardLimit = cardLimit;
     }
 
     public List<Buy> getBuy() {

@@ -1,13 +1,18 @@
 package com.ex1cartoesapi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Entity
-public class Customer {
+@Table(name = "customer")
+@EntityListeners(AuditingEntityListener.class)
+public class Customer implements Serializable {
+    private static final long serialVersionUID = -8026843854427060306L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
