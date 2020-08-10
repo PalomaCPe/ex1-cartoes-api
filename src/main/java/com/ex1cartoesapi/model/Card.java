@@ -4,27 +4,26 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Cartao {
+public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String numero;
+    private String number;
     private int cvv;
-    private String dataValidade;
-    private String dataDaMelhorCompra;
+    private String dateValid;
+    private String dateBestBuy;
     private Status status;
-    private double limite;
+    private double limit;
 
-    public Cartao() {
+    public Card() {
     }
 
-
     @OneToMany
-    public List<Compra> compra;
+    public List<Buy> buy;
 
     //Relacionamento de muitos cartões para um cliente.
     @ManyToOne
-    public Cliente cliente;
+    public Customer customer;
 
     public int getId() {
         return id;
@@ -34,12 +33,12 @@ public class Cartao {
         this.id = id;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getNumber() {
+        return number;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public int getCvv() {
@@ -50,20 +49,20 @@ public class Cartao {
         this.cvv = cvv;
     }
 
-    public String getDataValidade() {
-        return dataValidade;
+    public String getDateValid() {
+        return dateValid;
     }
 
-    public void setDataValidade(String dataValidade) {
-        this.dataValidade = dataValidade;
+    public void setDateValid(String dateValid) {
+        this.dateValid = dateValid;
     }
 
-    public String getDataDaMelhorCompra() {
-        return dataDaMelhorCompra;
+    public String getDateBestBuy() {
+        return dateBestBuy;
     }
 
-    public void setDataDaMelhorCompra(String dataDaMelhorCompra) {
-        this.dataDaMelhorCompra = dataDaMelhorCompra;
+    public void setDateBestBuy(String dateBestBuy) {
+        this.dateBestBuy = dateBestBuy;
     }
 
     public Status getStatus() {
@@ -74,27 +73,27 @@ public class Cartao {
         this.status = status;
     }
 
-    public double getLimite() {
-        return limite;
+    public double getLimit() {
+        return limit;
     }
 
-    public void setLimite(double limite) {
-        this.limite = limite;
+    public void setLimit(double limit) {
+        this.limit = limit;
     }
 
-    public List<Compra> getCompra() {
-        return compra;
+    public List<Buy> getBuy() {
+        return buy;
     }
 
-    public void setCompra(List<Compra> compra) {
-        this.compra = compra;
+    public void setBuy(List<Buy> buy) {
+        this.buy = buy;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

@@ -7,20 +7,20 @@ import javax.persistence.Id;
 import javax.validation.constraints.*;
 
 @Entity
-public class Cliente {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotNull(message =  "Nome deve ser preenchido")
     @NotBlank(message = "Nome deve ser preenchido")
-    private String nome;
+    private String name;
 
     private String cpf;
 
     @NotBlank(message = "Informar senha")
     @NotNull(message = "Informar senha")
-    private String senha;
+    private String password;
 
     public int getId() {
         return id;
@@ -30,12 +30,12 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCpf() {
@@ -46,11 +46,11 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

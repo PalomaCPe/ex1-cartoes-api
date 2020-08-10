@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
-public class Compra {
+public class Buy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -12,17 +12,17 @@ public class Compra {
     @ManyToOne
     private Card card;
 
-    @DecimalMin(value = "0", message = "Valor da compra deve ser maior ou igual a zero")
-    @Digits(integer = 6, fraction = 2, message = "Valor da compra fora do padrão")
-    private double valordacompra;
+    @DecimalMin(value = "0", message = "Preencher a valor da compra")
+    @Digits(integer = 6, fraction = 2, message = "Valor da compra inválido")
+    private double value;
 
-    @NotNull(message = "Data da compra nao pode ser nulo ")
-    @NotBlank(message ="Data da compra nao pode ser em branco.")
-    private String datadacompra;
+    @NotNull(message = "Preencher a data da compra")
+    @NotBlank(message ="Preencher a data da compra")
+    private String date;
 
-    @NotNull(message = "Local da compra nao pode ser nulo ")
-    @NotBlank(message ="Local da compra nao pode ser em branco.")
-    private String localdacompra;
+    @NotNull(message = "Informe onde a compra foi realizada")
+    @NotBlank(message ="Informe onde a compra foi realizada")
+    private String place;
 
     public int getId() {
         return id;
@@ -40,27 +40,27 @@ public class Compra {
         this.card = card;
     }
 
-    public double getValordacompra() {
-        return valordacompra;
+    public double getValue() {
+        return value;
     }
 
-    public void setValordacompra(double valordacompra) {
-        this.valordacompra = valordacompra;
+    public void setValue(double value) {
+        this.value = value;
     }
 
-    public String getDatadacompra() {
-        return datadacompra;
+    public String getDate() {
+        return date;
     }
 
-    public void setDatadacompra(String datadacompra) {
-        this.datadacompra = datadacompra;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getLocaldacompra() {
-        return localdacompra;
+    public String getPlace() {
+        return place;
     }
 
-    public void setLocaldacompra(String localdacompra) {
-        this.localdacompra = localdacompra;
+    public void setPlace(String place) {
+        this.place = place;
     }
 }
