@@ -13,11 +13,7 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String number;
-    private int cvv;
-    private String dateValid;
-    private String dateBestBuy;
-    private Status status;
-    private double cardLimit;
+    private boolean active = false;
 
     public Card() {
     }
@@ -25,7 +21,6 @@ public class Card {
     @OneToMany
     public List<Buy> buy;
 
-    //Relacionamento de muitos cartões para um cliente.
     @ManyToOne
     public Customer customer;
 
@@ -45,46 +40,6 @@ public class Card {
         this.number = number;
     }
 
-    public int getCvv() {
-        return cvv;
-    }
-
-    public void setCvv(int cvv) {
-        this.cvv = cvv;
-    }
-
-    public String getDateValid() {
-        return dateValid;
-    }
-
-    public void setDateValid(String dateValid) {
-        this.dateValid = dateValid;
-    }
-
-    public String getDateBestBuy() {
-        return dateBestBuy;
-    }
-
-    public void setDateBestBuy(String dateBestBuy) {
-        this.dateBestBuy = dateBestBuy;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public double getCardLimit() {
-        return cardLimit;
-    }
-
-    public void setCardLimit(double cardLimit) {
-        this.cardLimit = cardLimit;
-    }
-
     public List<Buy> getBuy() {
         return buy;
     }
@@ -99,5 +54,13 @@ public class Card {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

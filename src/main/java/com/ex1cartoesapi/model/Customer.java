@@ -21,12 +21,6 @@ public class Customer implements Serializable {
     @NotBlank(message = "Nome deve ser preenchido")
     private String name;
 
-    private String cpf;
-
-    @NotBlank(message = "Informar senha")
-    @NotNull(message = "Informar senha")
-    private String password;
-
     public int getId() {
         return id;
     }
@@ -41,21 +35,5 @@ public class Customer implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
