@@ -13,7 +13,7 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String number;
-    private boolean active = false;
+    private Boolean active = false;
 
     public Card() {
     }
@@ -56,11 +56,11 @@ public class Card {
         this.customer = customer;
     }
 
-    public boolean isActive() {
+    public Boolean getActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 }
