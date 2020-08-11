@@ -5,6 +5,8 @@ import com.ex1cartoesapi.repository.BuyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BuyService {
     @Autowired
@@ -12,5 +14,9 @@ public class BuyService {
 
     public Buy save(Buy buy) {
         return buyRepository.save(buy);
+    }
+
+    public List<Buy> listBuyByCardNumber(Integer id) {
+        return buyRepository.findAllByCardId(id);
     }
 }

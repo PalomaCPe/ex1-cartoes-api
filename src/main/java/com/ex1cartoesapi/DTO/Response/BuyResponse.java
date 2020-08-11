@@ -1,11 +1,21 @@
-package com.ex1cartoesapi.DTO.Request;
+package com.ex1cartoesapi.DTO.Response;
 
-public class BuyRequest {
+public class BuyResponse {
+    private Integer id;
+
     private Integer cardId;
 
     private String description;
 
     private double value;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getCardId() {
         return cardId;

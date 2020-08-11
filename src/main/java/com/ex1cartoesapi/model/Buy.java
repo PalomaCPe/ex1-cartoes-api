@@ -16,17 +16,13 @@ public class Buy {
     @ManyToOne
     private Card card;
 
+    @NotNull(message = "Informe uma descrição")
+    @NotBlank(message ="Informe uma descrição")
+    private String description;
+
     @DecimalMin(value = "0", message = "Preencher a valor da compra")
     @Digits(integer = 6, fraction = 2, message = "Valor da compra inválido")
     private double value;
-
-    @NotNull(message = "Preencher a data da compra")
-    @NotBlank(message ="Preencher a data da compra")
-    private String date;
-
-    @NotNull(message = "Informe onde a compra foi realizada")
-    @NotBlank(message ="Informe onde a compra foi realizada")
-    private String place;
 
     public int getId() {
         return id;
@@ -52,19 +48,11 @@ public class Buy {
         this.value = value;
     }
 
-    public String getDate() {
-        return date;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
