@@ -43,3 +43,16 @@ public class CardController {
         return cardMapper.toCardDetalheResponse(card);
     }
 }
+
+
+        Core
+        Montar cursos
+        Vender cursos
+
+        Support
+        Captar professores
+        Montar turmas
+        Guiar feedback, desempenho e engajamento
+        Captea
+        Generico
+        Cupom de desconto/mkt
